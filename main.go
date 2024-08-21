@@ -98,7 +98,7 @@ func englishToMorse(englishText string) string {
 	for _, char := range englishText {
 		switch {
 		case char == ' ':
-			morseCode.WriteString("   ") // Add three spaces between words
+			morseCode.WriteString("  ") // Add two spaces between words as there is already one space don't add three spaces.
 		default:
 			if morse, ok := englishToMorseMap[string(char)]; ok {
 				morseCode.WriteString(morse + " ") // Add a space after each letter
